@@ -13,19 +13,18 @@ const contactschema= new mongoose.Schema({
     concern:String
 })
 const data2 = mongoose.model('data2', contactschema);
+app.set('view engine', 'html');
+app.set('views',path.join(__dirname, 'views'))
 // EXPRESS SPECIFIC STUFF
 app.use( express.static('static'));
 app.use("/static", express.static('static'));
 app.use(express.urlencoded({ extended: true }))
-//PUG SPECIFIC STUFF
-app.set('view engine','pug')
-app.set('views',path.join(__dirname, 'views'))
 //ENDPOINTS
 app.get('/',(req, res)=>{
-    res.status(200).render('home.pug')
+    res.status(200).render('home.html')
 })
 app.get('/contact',(req, res)=>{
-    res.status(200).render('contact.pug')
+    res.status(200).render('home.html')
 })
 app.post('/contact',async(req, res)=>{
     const data=data2(req.body)
