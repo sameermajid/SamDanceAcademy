@@ -21,10 +21,10 @@ app.use("/static", express.static('static'));
 app.use(express.urlencoded({ extended: true }))
 //ENDPOINTS
 app.get('/',(req, res)=>{
-    res.status(200).render('home.html')
+    res.sendFile('home.html', {root: 'views'});
 })
 app.get('/contact',(req, res)=>{
-    res.status(200).render('home.html')
+    res.sendFile(__dirname+'/views/contact.html')
 })
 app.post('/contact',async(req, res)=>{
     const data=data2(req.body)
