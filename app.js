@@ -21,10 +21,10 @@ app.use("/static", express.static('static'));
 app.use(express.urlencoded({ extended: true }))
 //ENDPOINTS
 app.get('/',(req, res)=>{
-    res.sendFile('home.html');
+    res. sendFile(path. join(__dirname, '../SAMDANCEACADEMY.GITHUB.IO', 'home.html'));
 })
 app.get('/contact',(req, res)=>{
-    res.sendFile(__dirname+'contact.html')
+    res. sendFile(path. join(__dirname, '../SAMDANCEACADEMY.GITHUB.IO', 'contact.html'));
 })
 app.post('/contact',async(req, res)=>{
     const data=data2(req.body)
