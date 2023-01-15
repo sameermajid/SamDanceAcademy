@@ -24,7 +24,7 @@ app.get('/',(req, res)=>{
     res.sendFile('home.html', {root: 'views'});
 })
 app.get('/contact',(req, res)=>{
-    res.sendFile(__dirname+'/views/contact.html')
+    res.sendFile(__dirname+'contact.html')
 })
 app.post('/contact',async(req, res)=>{
     const data=data2(req.body)
