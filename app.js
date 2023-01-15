@@ -20,7 +20,7 @@ app.use( express.static('static'));
 app.use("/static", express.static('static'));
 app.use(express.urlencoded({ extended: true }))
 //ENDPOINTS
-app.get('/',(req, res)=>{
+app.get('/home',(req, res)=>{
     res. sendFile(path. join(__dirname, '../SAMDANCEACADEMY.GITHUB.IO', 'home.html'));
 })
 app.get('/contact',(req, res)=>{
