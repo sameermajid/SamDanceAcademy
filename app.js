@@ -21,7 +21,7 @@ app.use("/static", express.static('static'));
 app.use(express.urlencoded({ extended: true }))
 //ENDPOINTS
 app.get('/',(req, res)=>{
-    res.sendFile('home.html', {root: 'views'});
+    res.sendFile('home.html');
 })
 app.get('/contact',(req, res)=>{
     res.sendFile(__dirname+'contact.html')
